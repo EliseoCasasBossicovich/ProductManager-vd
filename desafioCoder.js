@@ -1,12 +1,33 @@
+const fs = require('fs');
+const path = './objets.json';
 class ProductManager{
     #iva = 1.21;
     #profit = 1.50;
     constructor(){
         this.products = [];
     }
+    async createObjet(objet){
+        try {
+            const objetsFile = await this.getUsers();
+            usersFile.push(objet);
+            await fs.promises.writeFile(path, JSON.stringify(objetsFile));
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-    getProducts(){
-        return this.products;
+    async getObjets(){
+        try {
+            if (fs.existsSync(path)){
+                const products = await fs.promises.readFile(path, 'utf8');
+                const productsJS = JSON.parse(products);
+                return productsJS;
+            } else {
+                return []
+            }
+        } catch (error) {
+            console.log(error);  
+        }
     }
 
     addProduct(name, description, price, stock, thumbnail){
@@ -41,12 +62,14 @@ class ProductManager{
 }
 
 const productManager = new ProductManager();
-// Agrego productos
 productManager.addProduct('Manzanas', 'Manzana deliciosa tamaño 80', 900, 20, 'www.manzanadelisiosa.com');
 productManager.addProduct('Bananas', 'Banannas Ecuatorianas Grandes', 480, 20, 'www.bananasecuatorianas.com');
 productManager.addProduct('Kiwi', 'Kiwis a punto', 1800, 20, 'www.kiwi.com');
-// Muestro poroductos
-console.log(productManager.getProducts());
-// Busco productos por id
-productManager.getProductById(1);
-productManager.getProductById(4);
+const test = async() => {
+    const get = await productManager.getObjets();
+    console.log('primer consulta', get);
+    const get2 = await productManager.getObjets();
+    console.log('segunda consulta', get2);
+}
+
+test()

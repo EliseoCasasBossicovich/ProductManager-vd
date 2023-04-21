@@ -1,0 +1,20 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "<h1>Product Manager</h1>\r <p>Product manager con posible aplicacion en e-commerce Verde Listo</p>",
+  "main": "desafioCoder.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EliseoCasasBossicovich/ProductManager-vd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EliseoCasasBossicovich/ProductManager-vd/issues"
+  },
+  "homepage": "https://github.com/EliseoCasasBossicovich/ProductManager-vd#readme"
+}
