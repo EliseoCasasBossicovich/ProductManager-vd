@@ -1,5 +1,5 @@
 import express from "express";
-import products from './ProductManager.json' assert {type: 'json'}
+import products from './products.json' assert {type: 'json'}
 
 const app = express()
 const PORT = 8080;
@@ -32,7 +32,7 @@ app.get('/products/:pid', (req, res)=>{
     if(productFilter){
         res.json(productFilter)
     }else{
-        res.send('Product ID does not exist.')
+        res.status(404).json({message:'Product ID does not exist.'})
     }
 })
 

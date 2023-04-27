@@ -1,5 +1,5 @@
 // import fs from 'fs';
-const fs = require('fs');
+import fs from 'fs';
 
 const path = './products.json'
 
@@ -171,4 +171,4 @@ const test = async ()=>{
 
 test()
 
-// export default productManager;
+export default productManager;

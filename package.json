@@ -6,8 +6,6 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start:http": "nodemon server-http.js",
-    "start:express": "nodemon server-express.js",
     "start:app": "nodemon src/app.js"
   },
   "repository": {
