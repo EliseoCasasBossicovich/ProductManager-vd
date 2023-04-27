@@ -2,10 +2,13 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "<h1>Product Manager</h1>\r <p>Product manager con posible aplicacion en e-commerce Verde Listo</p>",
-  "main": "desafioCoder.js",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:http": "nodemon server-http.js",
+    "start:express": "nodemon server-express.js",
+    "start:app": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
