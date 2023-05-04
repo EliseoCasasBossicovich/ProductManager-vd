@@ -1,0 +1,51 @@
+[{
+    "id": 1,
+    "title": "Bananas",
+    "description": "Bananas ecuatorianas",
+    "category": "Frutas",
+    "code": "banEcu",
+    "price": 480,
+    "status": true,
+    "thumbnail": "Nome",
+    "stock": 20
+}, {
+    "id": 2,
+    "title": "Kiwis",
+    "description": "Kiwis a punto",
+    "category": "Frutas",
+    "code": "kiw",
+    "price": 1800,
+    "status": true,
+    "thumbnail": "Nome",
+    "stock": 20
+}, {
+    "id": 3,
+    "title": "Sandias",
+    "description": "Sandias Br",
+    "category": "Frutas",
+    "code": "sanBr",
+    "price": 200,
+    "status": true,
+    "thumbnail": "Nome",
+    "stock": 20
+}, {
+    "id": 4,
+    "title": "Manzanas",
+    "description": "Manzanas chilenas",
+    "category": "Frutas",
+    "code": "manChi",
+    "price": 1200,
+    "status": true,
+    "thumbnail": "Nome",
+    "stock": 20
+}, {
+    "id": 5,
+    "title": "Mandarinas",
+    "description": "Mandarinas Criollas",
+    "category": "Frutas",
+    "code": "mandCri",
+    "price": 480,
+    "status": true,
+    "thumbnail": "Nome",
+    "stock": 20
+}]

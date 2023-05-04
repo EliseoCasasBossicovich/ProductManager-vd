@@ -6,11 +6,10 @@ class ProductManager {
     #newId = 0;
     constructor(path) {
         this.path = path;
-        this.listProducts = []
+        this.productList = []
     }
 
     async #createId() {
-
         const products = await fs.promises.readFile(path, 'utf-8')
         const productJSON = JSON.parse(products)
         if(productJSON.length > 0){
@@ -22,12 +21,10 @@ class ProductManager {
             let id = this.#newId
             return id;
         }
-
     }
 
     async getProducts() {
         try {
-
             if (fs.existsSync(path)) {
                 const products = await fs.promises.readFile(path, 'utf-8')
                 if(products.length == 0){
@@ -39,22 +36,20 @@ class ProductManager {
             } else {
                 return []
             }
-
         } catch (error) {
             return console.log(error)
         }
     }
 
     async addProduct(obj) {
-
         try {
             const product = {
                 id: await this.#createId(),
                 ...obj
             }
-            const all = await this.getProducts()
-            all.push(product)
-            await fs.promises.writeFile(path, JSON.stringify(all));
+            const allProducts = await this.getProducts()
+            allProducts.push(product)
+            await fs.promises.writeFile(path, JSON.stringify(allProducts));
             return product
         } catch (error) {
             return console.log(error)
@@ -71,7 +66,7 @@ class ProductManager {
                     const productFilter = productsJSON.filter((prod) => prod.id == idProduct)
                     return productFilter[0]
                 } else {
-                    return console.log('Storage empty')
+                    return console.log('The storage is empty.')
                 }
             } else {
                 return console.log('Storage does not exist or could not be read.')
@@ -88,7 +83,7 @@ class ProductManager {
                     const products = await fs.promises.readFile(path, 'utf-8')
                     const productsJSON = JSON.parse(products)
                     const productFound = productsJSON.filter((prod) => prod.id == idProduct);
-                    const productFilter = productsJSON.filter((prod) => prod.id != idProduct); 
+                    const productFilter = productsJSON.filter((prod) => prod.id != idProduct);
                     if (productFound) {
                         await fs.promises.writeFile(path, JSON.stringify(productFilter))
                         return productFound
@@ -127,19 +122,20 @@ class ProductManager {
 
 const productManager = new ProductManager()
 
-const test = async ()=>{
-    try{
+const test = async () => {
+    try {
         await productManager.getProducts()
-        await productManager.addProduct({name:'Manzanas', description:'Manzana deliciosa tamaño 80', price:900, stock:20, thumbnail:'www.manzanadelisiosa.com'})
-        await productManager.addProduct({name:'Bananas', description:'Banannas Ecuatorianas Grandes', price:480, stock:20, thumbnail:'www.bananasecuatorianas.com'})
-        await productManager.addProduct({name:'Kiwis', description:'Kiwis a punto', price:1800, stock:20, thumbnail:'www.kiwi.com'})
-        await productManager.addProduct({name:'Peras', description:'Peras Maduras', price:480, stock:20, thumbnail:'www.peraswilliam.com'})
-        await productManager.addProduct({name:'Sandía', description:'Sandías brasileras', price:200, stock:20, thumbnail:'www.sandiasbr..com'})
-        await productManager.addProduct({name:'Mandarinas', description:'Mandarinas criollas', price:400, stock:20, thumbnail:'www.mandarinascriollas'})
-    }catch(error){
+        await productManager.addProduct({ title: 'Bananas', description: 'Bananas ecuatorianas',category: 'Frutas', code: 'banEcu', price: 480, status: true, thumbnail: 'Nome', stock: 20 })
+        await productManager.addProduct({ title: 'Kiwis', description: 'Kiwis a punto', category: 'Frutas', code: 'kiw', price: 1800, status: true, thumbnail: 'Nome', stock: 20 })
+        await productManager.addProduct({ title: 'Sandias', description: 'Sandias Br', category: 'Frutas', code: 'sanBr', price: 200, status: true, thumbnail: 'Nome', stock: 20 })
+        await productManager.addProduct({ title: 'Manzanas', description: 'Manzanas chilenas', category: 'Frutas', code: 'manChi', price: 1200, status: true, thumbnail: 'Nome', stock: 20 })
+        await productManager.addProduct({ title: 'Mandarinas', description: 'Mandarinas Criollas', category: 'Frutas', code: 'mandCri', price: 480, status: true, thumbnail: 'Nome', stock: 20 })
+        
+    } catch (error) {
         console.log(error)
     }
 }
 
 test()
+
 export default ProductManager;

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import ProductManager from "../Manager/ProductManager.js";
+import ProductManager from "../manager/ProductManager.js";
 
 const router = Router()
 
@@ -46,7 +46,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-router.put('/:id', async (req, res) => { 
+router.put('/:id', async (req, res) => {
     try {
         const product = req.body;
         const { id } = req.params;
@@ -63,7 +63,7 @@ router.put('/:id', async (req, res) => {
     }
 })
 
-router.delete('/:pid', async (req, res) => { 
+router.delete('/:pid', async (req, res) => {
     try {
         const { pid } = req.params;
         const products = await productManager.getProducts();

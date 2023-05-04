@@ -10,8 +10,10 @@ class Cart {
     }
 
     async #generateId() {
+
         const allCarts = await fs.promises.readFile(path, 'utf-8')
         const cartsJSON = JSON.parse(allCarts)
+
         if (cartsJSON.length > 0) {
             const cartIds = cartsJSON.map(cart => cart.id)
             const maxNumber = Math.max(...cartIds)
@@ -23,19 +25,24 @@ class Cart {
             let id = this.#firstId
             return id;
         }
+
     }
 
     async createCart() {
         try {
             if (fs.existsSync(path)) {
+
                 const cart = await fs.promises.readFile(path, 'utf-8')
+
                 if (cart.length == 0) {
                     await fs.promises.writeFile(path, JSON.stringify([]))
                 }
+
                 const newCart = {
                     id: await this.#generateId(),
                     products: []
                 }
+
                 if (cart.length == 0) {
                     await fs.promises.writeFile(path, JSON.stringify([newCart]))
                 } else {
@@ -43,9 +50,11 @@ class Cart {
                     cartJSON.push(newCart)
                     await fs.promises.writeFile(path, JSON.stringify(cartJSON))
                 }
+
             } else {
                 return []
             }
+
         } catch (error) {
             return console.log(error)
         }
