@@ -1,23 +1,3 @@
-// import express from "express";
-// import routerProducts from "./routes/ProductManagerRouter.js";
-// import routerCart from "./routes/CartRouter.js";
-// import morgan from "morgan";
-
-// const app = express()
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.use(morgan('dev'))
-
-// app.use('/products', routerProducts);
-// app.use('/cart', routerCart);
-
-
-// const PORT = 8080;
-// app.listen(PORT, () => {
-//     console.log(`Server in port ${PORT}`)
-// })
-
 import express from "express";
 import routerProducts from "./routes/ProductManagerRouter.js";
 import routerCart from "./routes/CartRouter.js";
@@ -28,7 +8,6 @@ import { __dirname } from "./path.js";
 import { Server } from "socket.io";
 import ProductManager from "./manager/ProductManager.js";
 const app = express()
-
 /* --------------------------------- EXPRESS -------------------------------- */
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
