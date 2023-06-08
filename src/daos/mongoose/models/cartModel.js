@@ -3,10 +3,12 @@ import mongoose from "mongoose";
 const cartCollection = 'carts'
 
 const cartSchema = new mongoose.Schema({
-    products: {type: Array}
+    products: [
+        
+    ]
 },
     {
-        timestamps: true
+        timestamps: true,
     })
 
 export const cartModel = mongoose.model(cartCollection, cartSchema)
