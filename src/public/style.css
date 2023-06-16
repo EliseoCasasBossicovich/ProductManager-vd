@@ -1,5 +1,5 @@
 :root {
-    --color-black: #222;
+    --color-green: rgb(13, 187, 0);;
     --color-white: #E8E8E8;
 }
 
@@ -17,14 +17,14 @@ body {
 h1 {
     text-align: center;
     font-size: 7rem;
-    background-color: var(--color-black);
+    background-color: var(--color-green);
     color: white;
 }
 
 h2 {
     text-align: center;
     font-size: 4rem;
-    background-color: var(--color-black);
+    background-color: var(--color-green);
     color: white;
 }
 
@@ -34,7 +34,7 @@ h2 {
     align-items: flex-start;
     height: 50rem;
     overflow: auto;
-    background-color: var(--color-black);
+    background-color: var(--color-green);
 }
 
 .div__list li {
@@ -43,7 +43,7 @@ h2 {
     font-weight: bold;
     background-color: white;
     padding: 1rem;
-    color: var(--color-black);
+    color: var(--color-green);
     list-style:decimal;
     list-style-position: inside;
     text-align: center;
@@ -64,7 +64,7 @@ h2 {
     justify-content: center;
     align-items: center;
     margin: 1rem 0;
-    background-color: var(--color-black);
+    background-color: var(--color-green);
     padding: 1rem;
 }
 
@@ -84,7 +84,7 @@ h2 {
     width: 15rem;
     font-size: 1.3rem;
     font-weight: bold;
-    background-color: var(--color-black);
+    background-color: var(--color-green);
     border: 2px solid white;
     border-radius: 10px;
     cursor: pointer;
@@ -98,9 +98,157 @@ h2 {
     transition: 0.2s;
 }
 
-
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: rgb(13, 187, 0);
+}
+
+#login input{
+    margin: 1rem;
+    height: 3rem;
+    width: 25rem;
+}
+
+#login button{
+    margin: 1rem;
+    width: 15rem;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 1px solid var(--color-white);
+    border-radius: 5px;
+    background-color: rgb(13, 187, 0);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+#login button:hover{
+    background-color: var(--color-white);
+    color: var(--color-green);
+    transition: 0.25s;
+}
+
+#register{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: rgb(13, 187, 0);
+}
+
+#register input{
+    margin: 1rem;
+    height: 3rem;
+    width: 25rem;
+}
+
+#register button{
+    margin: 1rem;
+    width: 15rem;
+    height: 5rem;
+    font-weight: bold;
+    font-size: 2rem;
+    border: 1px solid var(--color-white);
+    border-radius: 5px;
+    background-color: rgb(13, 187, 0);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+#register button:hover{
+    background-color: var(--color-white);
+    color: var(--color-black);
+    transition: 0.25s;
+}
+
+/* --------------------------------- PROFILE -------------------------------- */
+
+.profile__name{
+    font-size: 4rem;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.products__list{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    height: 50vh;
+    text-align: center;
+    background-color: var(--color-green);
+    overflow: hidden;
+}
+
+.products__list h3{
+    font-size: 3rem;
+    margin: 0.5rem;
+    color: white;
+}
+
+.product__list{
+    height: 100%;
+    width: 100%;
+}
+
+.product__item{
+    color: var(--color-green);
+    list-style: none;
+    font-size: 2rem;
+    margin: 0.25rem;
+    padding: 0.5rem;
+    background-color: var(--color-white);
+}
+
+.div__btns{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.btn__back{
+    background-color: var(--color-green);
+    color: white;
+    width: 15rem;
+    height: 5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn__back:hover{
+    background-color: var(--color-white);
+    color: var(--color-green);
+    transition: 0.25s;
+    transform: scale(1.25);
+}
+
+.div__profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div__profile button {
+    margin: 1.5rem 0;
+    background-color: #e6e639;
+}
+
+span{
+    color: #e6e639;
 }

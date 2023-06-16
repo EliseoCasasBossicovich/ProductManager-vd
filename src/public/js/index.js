@@ -20,7 +20,7 @@ form.addEventListener('submit', (e) => {
     const stock = inputStock.value
     const thumbnail = inputThumbnail.value
     socketClient.emit('newProduct', { title: title, description: description, category: category, code: code, price: price, stock: stock, thumbnail: thumbnail })
-    alert('Producto agregado')
+    alert('¡Producto agregado!')
 })
 
 socketClient.on('arrayProducts', (arrayProducts) => {
@@ -38,3 +38,6 @@ socketClient.on('arrayNewProduct', (lastProduct) => {
     li.innerText = `${lastProduct.title} - PRICE: $${lastProduct.price}`
     list.appendChild(li)
 })
+
+
+
