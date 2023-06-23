@@ -2,6 +2,7 @@ import { Router } from "express";
 import { __dirname } from "../path.js";
 import ProductManager from "../manager/ProductManager.js";
 
+const productManager = new ProductManager(__dirname + '/manager/ProductManager.json');
 const router = Router();
 
 router.get('/', (req, res) =>{
@@ -24,6 +25,9 @@ router.get('/errorRegister', (req, res) =>{
 })
 router.get('/errorLogin', (req, res) =>{
     res.render('errorLogin')
+})
+router.get('/profileGithub', (req, res) =>{
+    res.render('profileGithub')
 })
 
 export default router;
